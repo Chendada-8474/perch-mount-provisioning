@@ -30,9 +30,9 @@ services:
     image: docker.io/chendada8474/perch-mount-system:latest
     container_name: perch-mount-system
     volumes:
-      - ./env:./app/.env
-      - ./flask_secret:./app/app/flask_secret
-      - ./jwt_secret:./app/app/jwt_secret
+      - ./env:/app/.env
+      - ./flask_secret:/app/flask_secret
+      - ./jwt_secret:/app/jwt_secret
     ports:
       - 5000:5000
     depends_on:
