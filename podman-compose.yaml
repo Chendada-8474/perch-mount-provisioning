@@ -19,10 +19,10 @@ services:
     restart: always
     healthcheck:
       # pg_isready is a standard utility included in Postgres images
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
+      test: ["CMD-SHELL", "pg_isready -U dev_user"]
+      interval: 5s
       timeout: 5s
-      retries: 15
+      retries: 5
   migrate:
     image: docker.io/chendada8474/perch-mount-migrate:latest
     container_name: migrate
